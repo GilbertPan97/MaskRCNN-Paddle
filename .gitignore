@@ -1,8 +1,8 @@
-./models
+models
 
-./images
+images
 
-./coco_dataset
+coco_dataset
 
-./inference_results
+inference_results
 
