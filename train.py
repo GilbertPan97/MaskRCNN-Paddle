@@ -15,7 +15,7 @@ DIVACE = 'gpu:0'    # gpu or cpu
 ROOT_DIR = os.path.abspath("./")
 
 # coco dataset root dir(include annotations and images)
-DATA_ROOT_DIR = os.path.join(ROOT_DIR, "coco_dataset")
+DATA_ROOT_DIR = os.path.join(ROOT_DIR, "coco_dataset1")
 
 # output model dir(include epoch models and frozen model)
 MODELS_DIR = os.path.join(ROOT_DIR, "models")
@@ -103,6 +103,7 @@ def main():
         train_batch_size=config.BatchSize,
         eval_dataset=eval_dataset,
         pretrain_weights='COCO' if TRAIN_WITH_COCO else '',
+        # pretrain_weights='./coco_dataset1/pre-trained-model/model.pdparams',
         learning_rate=config.LEARNING_RATE,
         lr_decay_epochs=[24, 32],
         warmup_steps=20,
@@ -127,6 +128,4 @@ if __name__ == "__main__":
 
 # To partition datasets, Please run following code in current terminal:
 # paddlex --split_dataset --format COCO --dataset_dir path/to/coco/saved/dir \
-# --val_value 0.2 --test_value 0.2
-
-
+# --val_value 0.1 --test_value 0.1

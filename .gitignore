@@ -3,6 +3,7 @@ models
 images
 
 coco_dataset
+coco_dataset*
 
 inference_results
 
